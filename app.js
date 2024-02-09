@@ -8,7 +8,8 @@ const app=express()
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect("mongodb+srv://shamiltk02:shamiltk98@cluster0.7syqm.mongodb.net/blogDb?retryWrites=true&w=majority",{useNewUrlParser})
+
+mongoose.connect("mongodb+srv://shamiltk02:shamiltk98@cluster0.7syqm.mongodb.net/blogDb?retryWrites=true&w=majority",{useNewUrlParser:true})
 
 app.use("/api/blog",blogRouter)
 
