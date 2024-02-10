@@ -2,11 +2,9 @@ const mongoose=require("mongoose")
 
 const usersModel=new mongoose.Schema({
     name:String,
-    age:String,
-    mobileNo:String,
-    address:String,
-    pincode:String,
     email:String,
+    age:String,
+    phone:String,
     password:String
 })
 

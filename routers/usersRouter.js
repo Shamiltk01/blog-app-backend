@@ -9,7 +9,7 @@ const hashFunction=async(password)=>{
 }
 
 //signup
-router.post("/signup",async(req,res)=>{
+router.post("/register",async(req,res)=>{
   let {data} = {"data":req.body}
   let password=data.password
   hashFunction(password).then((hashedPassword)=>{
@@ -22,7 +22,7 @@ router.post("/signup",async(req,res)=>{
 
 
 //signin
-router.post("/signin",async(req,res)=>{
+router.post("/login",async(req,res)=>{
   let email=req.body.email
   let userPassword=req.body.password
   let data=await usersModel.findOne({email:email})
@@ -38,7 +38,7 @@ router.post("/signin",async(req,res)=>{
       res.json({status:"password is not correct"})
     )
   }
-  res.json(data)
+  res.json({status:"success"})
 })
 
 module.exports=router
