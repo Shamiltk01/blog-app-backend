@@ -15,7 +15,7 @@ router.post("/viewall",async(req,res)=>{
   .populate("userId","name mobileNo email -_id")
   .exec()
 
-  res.json(data)
+  res.json({status:"success","userdata":data})
 })
 
 module.exports=router
